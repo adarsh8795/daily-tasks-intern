@@ -1,0 +1,102 @@
+mlist=[1,2,3,4,5,6,7,8,9]
+def mprint(mlist):
+ #for i in range(0,9):
+    print(mlist[0],mlist[1],mlist[2])
+    print(mlist[3],mlist[4],mlist[5])
+    print(mlist[6],mlist[7],mlist[8])
+
+ #for i in range (0,9):
+   # print(mlist[i])
+def uinput():
+    res=10
+    while res not in range(0,9): 
+     res=int(input('type the index:'))
+    return res
+def update(mlist,step,res):
+    if(step%2==0):
+        mlist[res]='X'
+        return 1
+    else:
+        mlist[res]='O'
+        return 2
+def cheker(mlist):
+    if mlist[0]==mlist[3]==mlist[6]:
+        if mlist[0]=='X':
+            print('player 1 won')
+            return 1
+        else:
+            print('player2 won')
+            return 2
+    elif mlist[1]==mlist[4]==mlist[7]:
+        if mlist[1]=='X':
+            print('player 1 won')
+            return 1
+        else:
+            print('player2 won')
+            return 2
+    elif mlist[2]==mlist[5]==mlist[8]:
+        if mlist[2]=='X':
+            print('player 1 won')
+            return 1
+        else:
+            print('player2 won')
+            return 2
+    elif mlist[0]==mlist[1]==mlist[2]:
+        if mlist[1]=='X':
+            print('player 1 won')
+            return 1
+        else:
+            print('player2 won')
+            return 2
+    elif mlist[3]==mlist[4]==mlist[5]:
+        if mlist[1]=='X':
+            print('player 1 won')
+            return 1
+        else:
+            print('player2 won')
+            return 2
+    elif mlist[6]==mlist[7]==mlist[8]:
+        if mlist[1]=='X':
+            print('player 1 won')
+            return 1
+        else:
+            print('player2 won')
+            return 2
+    elif mlist[0]==mlist[4]==mlist[8]:
+        if mlist[1]=='X':
+            print('player 1 won')
+            return 1
+        else:
+            print('player2 won')
+            return 2
+    elif mlist[2]==mlist[4]==mlist[6]:
+        if mlist[1]=='X':
+            print('player 1 won')
+            return 1
+        else:
+            print('player2 won')
+            return 2
+
+def start():
+     x=input('are you ready y or n:')
+
+     if x=='y':  
+      mprint(mlist)
+      for i in range(0,9):
+         res=uinput()
+         update(mlist,i,res)
+         mprint(mlist)
+         if(cheker(mlist)==1):
+            print("player 1 won")
+         elif(cheker(mlist)==2):
+            print('player 2 won')
+     else :
+        start()   
+
+
+start()
+
+
+
+    
+            
